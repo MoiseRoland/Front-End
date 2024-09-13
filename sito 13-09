@@ -1,0 +1,53 @@
+```html
+<html>
+  <head>
+    <title>Sito 13/09/2024</title>
+  </head>
+   <body>
+     <div class="nav">
+         <p>Primo</p>
+         <p>Secondo</p>
+     </div>
+
+     <div class="container">
+       <h1>Sito Web</h1>
+       <p>Prova Sito</p>
+     </div>
+     
+
+     <footer>
+       <div class="bottom">
+         <p>Footer 1</p>
+          <p>Footer 2</p>
+       </div>
+     </footer>
+   </body>
+</html>
+```
+
+```css
+
+.nav {
+    background-color: red;
+    padding: 10px;
+    display: flex;
+    color:white;
+    justify-content: space-evenly;
+    font-weight:bold;
+}
+.bottom {
+    background-color: black;
+    padding: 10px;
+    display: flex;
+    color:white;
+    position:fixed;
+    bottom:0;
+    width:100%;
+    justify-content: space-evenly;
+    font-weight:bold;
+}
+
+.container{
+  right:10px;
+}
+```
