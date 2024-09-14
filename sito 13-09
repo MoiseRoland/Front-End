@@ -1,53 +1,129 @@
 ```html
 <html>
-  <head>
-    <title>Sito 13/09/2024</title>
-  </head>
-   <body>
-     <div class="nav">
-         <p>Primo</p>
-         <p>Secondo</p>
-     </div>
+<body>
+  <div class="nav">
+    <p>Primo</p>
+    <p>Secondo</p>
+  </div>
 
-     <div class="container">
-       <h1>Sito Web</h1>
-       <p>Prova Sito</p>
-     </div>
-     
+  <div class="main-content">
+    <div class="left">
+      <h1>Sito Web</h1>
+      <label for="fname">Nome:</label>
+      <input type="text" id="fname" name="fname" />
+      <label for="cname">Cognome:</label>
+      <input type="text" id="cname" name="cname" />
+      <button id="btn">Ciao</button>
+    </div>
 
-     <footer>
-       <div class="bottom">
-         <p>Footer 1</p>
-          <p>Footer 2</p>
-       </div>
-     </footer>
-   </body>
+    <div class="right">
+      <div class="right-content">
+        <h1>Carrello</h1>
+        <img
+          src="https://cdn.icon-icons.com/icons2/2645/PNG/512/cart_icon_160296.png"
+          alt="#"
+        />
+      </div>
+      <p id="name">Nome</p>
+      <p id="surname">Cognome</p>
+    </div>
+  </div>
+  <footer>
+    <div class="bottom">
+      <p>Footer 1</p>
+      <p>Footer 2</p>
+    </div>
+  </footer>
+</body>
 </html>
+
 ```
 
 ```css
+html,
+body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
 
 .nav {
-    background-color: red;
-    padding: 10px;
-    display: flex;
-    color:white;
-    justify-content: space-evenly;
-    font-weight:bold;
-}
-.bottom {
-    background-color: black;
-    padding: 10px;
-    display: flex;
-    color:white;
-    position:fixed;
-    bottom:0;
-    width:100%;
-    justify-content: space-evenly;
-    font-weight:bold;
+  background-color: skyblue;
+  padding: 10px;
+  display: flex;
+  color: orangered;
+  justify-content: space-evenly;
+  font-weight: bold;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
 }
 
-.container{
-  right:10px;
+footer {
+  background-color: black;
+  padding: 10px;
+  display: flex;
+  color: white;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  justify-content: space-evenly;
+  font-weight: bold;
 }
+
+.main-content {
+  flex: 1;
+  display: flex;
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+
+.left {
+  flex: 2;
+  padding: 20px;
+  background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.right {
+  padding: 20px;
+  background-color: #e4e4e4;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.right-content {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+img {
+  max-width: 50px;
+  max-height: 50px;
+  margin-left: 10px;
+}
+
+input {
+  width: 200px;
+}
+
+button {
+  width: 210px;
+}
+
+```
+
+```js
+document.getElementById('btn').addEventListener('click', function() {
+  var nome = document.getElementById('fname').value;
+  var cognome = document.getElementById('cname').value;
+  document.getElementById('name').textContent = 'Nome: ' + nome;
+  document.getElementById('surname').textContent = 'Cognome: ' + cognome;
+});
+
 ```
