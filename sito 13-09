@@ -1,129 +1,144 @@
-```html
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Sito Prova</title>
+</head>
+
 <body>
-  <div class="nav">
-    <p>Primo</p>
-    <p>Secondo</p>
-  </div>
+    <ul class="lista">
+        <div class="destra">
+            <a>SignUp</a>
+            <a>LogIn</a>
+        </div>
+        <div class="sinistra">
+            <a>Home</a>
+            <a>Ciao a tutti</a>
+        </div>
+    </ul>
+    <div class="container">
+        <div class="h1">
+            <h1>Ciao</h1>
+            <label for="fname">Nome:</label>
+            <input type="text" id="fname" name="fname" />
+            <label for="cname">Cognome:</label>
+            <input type="text" id="cname" name="cname" />
+            <button id="btn">Invio</button>
+            <div class="buttons">
+                <button id="btnData">Data</button>
+                <button id="btnScreen">Info pagina</button>
+            </div>
+        </div>
+        <div class="h2">
+            <h1>Prova</h1>
+            <p id="name">Nome:</p>
+            <p id="surname">Cognome:</p>
+            <p id="data">Data:</p>
+            <p id="heigth"></p>
+            <p id="width"></p>
+        </div>
+    </div>
+    <footer class="footer">
+        <p>&copy; Copyright</p>
+    </footer>
 
-  <div class="main-content">
-    <div class="left">
-      <h1>Sito Web</h1>
-      <label for="fname">Nome:</label>
-      <input type="text" id="fname" name="fname" />
-      <label for="cname">Cognome:</label>
-      <input type="text" id="cname" name="cname" />
-      <button id="btn">Ciao</button>
-    </div>
 
-    <div class="right">
-      <div class="right-content">
-        <h1>Carrello</h1>
-        <img
-          src="https://cdn.icon-icons.com/icons2/2645/PNG/512/cart_icon_160296.png"
-          alt="#"
-        />
-      </div>
-      <p id="name">Nome</p>
-      <p id="surname">Cognome</p>
-    </div>
-  </div>
-  <footer>
-    <div class="bottom">
-      <p>Footer 1</p>
-      <p>Footer 2</p>
-    </div>
-  </footer>
+    <script src="script.js"></script>
 </body>
+
 </html>
 
-```
 
-```css
-html,
-body {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+
+body{
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
 }
 
-.nav {
-  background-color: skyblue;
-  padding: 10px;
-  display: flex;
-  color: orangered;
-  justify-content: space-evenly;
-  font-weight: bold;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-}
+.lista {
+    display: flex;
+    background-color: rgba(77, 173, 202, 0.8);
+    justify-content: space-between;
+    color: #1a16d8;
+    margin: 0;
+  }
+  .sinistra {
+    display: flex;
+  }
+  .destra{
+    display: flex;
+  }
+  .lista a {
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    border-radius: 25px;
+  }
+  .lista a:hover {
+    background-color: #807fb4;
+    color: rgba(255, 255, 255);
+  }
+  .buttons
+  {
+    display:block;
+    text-align: center;
+  }
+  .container {
+    display: grid;
+    grid-template-columns: 70vw auto;
+    grid-template-rows: 90vh;
+    background-color: #2196f3;
+  }
 
-footer {
-  background-color: black;
-  padding: 10px;
-  display: flex;
-  color: white;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  justify-content: space-evenly;
-  font-weight: bold;
-}
+  .container .h1 {
+    background-color: rgba(212, 99, 99, 0.8);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+  }
+  .container .h2 {
+    background-color: rgba(115, 239, 140, 0.8);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+  }
+  .footer {
+    display: flex;
+    background-color: rgba(77, 173, 202, 0.8);
+    justify-content: center;
+  }
+  a {
+    color: #1a16d8;
+  }
+  input {
+    width: 200px;
+  }
+  
+  button {
+    width: 210px;
+  }
 
-.main-content {
-  flex: 1;
-  display: flex;
-  margin-top: 60px;
-  margin-bottom: 40px;
-}
 
-.left {
-  flex: 2;
-  padding: 20px;
-  background-color: #f4f4f4;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
-.right {
-  padding: 20px;
-  background-color: #e4e4e4;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
-.right-content {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-img {
-  max-width: 50px;
-  max-height: 50px;
-  margin-left: 10px;
-}
-
-input {
-  width: 200px;
-}
-
-button {
-  width: 210px;
-}
-
-```
-
-```js
 document.getElementById('btn').addEventListener('click', function() {
-  var nome = document.getElementById('fname').value;
-  var cognome = document.getElementById('cname').value;
-  document.getElementById('name').textContent = 'Nome: ' + nome;
-  document.getElementById('surname').textContent = 'Cognome: ' + cognome;
+    var nome = document.getElementById('fname').value;
+    var cognome = document.getElementById('cname').value;
+    document.getElementById('name').textContent = 'Nome: ' + nome;
+    document.getElementById('surname').textContent = 'Cognome: ' + cognome;
+  });
+
+  document.getElementById('btnData').addEventListener('click', function() {
+    var data= Date();
+    document.getElementById('data').textContent= 'Data: '+data;
 });
 
-```
+document.getElementById('btnSCreen').addEventListener('click', function() {
+    var h = screen.height;
+    var w = screen.width;
+    document.getElementById('heigth').textContent= 'Altezza: '+h;
+    document.getElementById('width').textContent= 'Larghezza: '+w;
+});
